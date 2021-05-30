@@ -103,7 +103,6 @@ public class XMLConfigBuilder extends BaseBuilder {
 
   /**
    * 解析xml配置数据到Configuration类
-   *
    * @param root 从mybatis-config.xml文件中解析到的 <configuration>...<configuration/>及所有子标签
    */
   private void parseConfiguration(XNode root) {
@@ -301,7 +300,7 @@ public class XMLConfigBuilder extends BaseBuilder {
           Environment.Builder environmentBuilder = new Environment.Builder(id)
             .transactionFactory(txFactory)
             .dataSource(dataSource); // 调用静态内部类构建Environment对象， 对enviroment：id、transactionManager、dataSource进行初始化赋值
-          configuration.setEnvironment(environmentBuilder.build()); // configuration配置文件对应的java对象类 Configuration
+          configuration.setEnvironment(environmentBuilder.build()); // Environment赋值到configuration配置文件对应的java对象类 Configuration
           break;
         }
       }

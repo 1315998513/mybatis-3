@@ -25,7 +25,6 @@ public class MybatisMainEnd {
     InputStream inputStream = Resources.getResourceAsStream(resource);
 
     /**
-     * 构建会话工厂，如何获取到数据库源？
      * 一、解析数据库配置封装到 Configuration 对象
      * 1.SqlSessionFactoryBuilder().build(inputStream)
      *  2.XMLConfigBuilder.prase()

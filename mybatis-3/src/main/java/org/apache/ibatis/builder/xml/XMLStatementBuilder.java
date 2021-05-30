@@ -54,7 +54,7 @@ public class XMLStatementBuilder extends BaseBuilder {
   }
 
   /**
-   * 对select/update... 标签上的属性进行解析，拿到其中的 id等等
+   * 对select/update... 标签上的属性进行解析
    */
   public void parseStatementNode() {
     String id = context.getStringAttribute("id");
@@ -96,7 +96,7 @@ public class XMLStatementBuilder extends BaseBuilder {
         ? Jdbc3KeyGenerator.INSTANCE : NoKeyGenerator.INSTANCE;
     }
 
-    SqlSource sqlSource = langDriver.createSqlSource(configuration, context, parameterTypeClass);
+    SqlSource sqlSource = langDriver.createSqlSource(configuration, context, parameterTypeClass);// sql解析
     StatementType statementType = StatementType.valueOf(context.getStringAttribute("statementType", StatementType.PREPARED.toString()));
     Integer fetchSize = context.getIntAttribute("fetchSize");
     Integer timeout = context.getIntAttribute("timeout");

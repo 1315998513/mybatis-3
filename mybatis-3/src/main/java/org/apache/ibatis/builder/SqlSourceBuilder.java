@@ -42,7 +42,7 @@ public class SqlSourceBuilder extends BaseBuilder {
 
   public SqlSource parse(String originalSql, Class<?> parameterType, Map<String, Object> additionalParameters) {
     ParameterMappingTokenHandler handler = new ParameterMappingTokenHandler(configuration, parameterType, additionalParameters);
-    GenericTokenParser parser = new GenericTokenParser("#{", "}", handler);
+    GenericTokenParser parser = new GenericTokenParser("#{", "}", handler);//解析sql语句的接收参数
     String sql;
     if (configuration.isShrinkWhitespacesInSql()) {
       sql = parser.parse(removeExtraWhitespaces(originalSql));
